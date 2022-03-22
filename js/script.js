@@ -1,36 +1,24 @@
 $(function(){
   
-    var embed = $('.youtube');
-    $('.video').append(embed);
-  
-    /* click 'PLAY'  button */
-    $('#trailer').click( function() {
-      // show popup background
-      $('.gray_mask').fadeIn(200);
-      // show popup 
-      $('#popup').fadeIn(300);
-      // append youtube iframe on popup
-      $('.video').append(embed);
-    });
- 
-    /* click 'CLOSE' button */
-    $('.gray_mask').click( function() {
-      // hide popup background
-      $('#popup').hide();
-      // hide popup 
-      $('.gray_mask').hide();
-      // empty youtube iframe on popup
-      $('.video').empty();
-    });
+  var embed = $('.youtube');
+  $('.video').append(embed);
 
-  /* click 'popu background' */
+  $('#trailer').click( function() {
+    $('.gray_mask').fadeIn(200);
+    $('#popup').fadeIn(300);
+    $('.video').append(embed);
+  });
+ 
   $('.gray_mask').click( function() {
-    // hide popup background
     $('#popup').hide();
-    // hide popup 
     $('.gray_mask').hide();
-    // empty youtube iframe on popup
+    $('.video').empty();
+  });
+
+  $('.gray_mask').click( function() {
+    $('#popup').hide();
+    $('.gray_mask').hide();
     $('.video').empty(); 
   }); 
-  
+
 });
